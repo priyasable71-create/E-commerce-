@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bloom Essence 🌸</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="lux-header">
+    <div class="lux-logo">Bloom Essence 🌸</div>
+    <nav class="lux-nav">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/products}">Products</a>
+        <a th:href="@{/order/cart}">Cart</a>
+        <span th:if="${session.user == null}">
+            <a th:href="@{/login}">Login</a>
+            <a th:href="@{/register}">Register</a>
+        </span>
+        <span th:if="${session.user != null}">
+            <a th:href="@{/logout}">Logout</a>
+        </span>
+    </nav>
+</header>
+
+<section style="text-align:center; padding:60px;">
+    <h1 class="hero-title">Welcome to Bloom Essence</h1>
+    <p>Discover our exclusive Spring & Autumn Collection of luxurious perfumes and fashion for women.</p>
+    <a class="lux-btn" th:href="@{/products}">Shop Now</a>
+</section>
+
+<footer class="lux-footer">
+    © 2025 Bloom Essence - Spring & Autumn Collection
+</footer>
+</body>
+</html>

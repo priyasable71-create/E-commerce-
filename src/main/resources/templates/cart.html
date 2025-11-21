@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - E-Commerce</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+</head>
+<body>
+
+<header class="lux-header">
+    <div class="lux-logo">Bloom Essence 🌸</div>
+    <nav class="lux-nav">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/products}">Products</a>
+        <span th:if="${session.user == null}">
+            <a th:href="@{/login}">Login</a>
+            <a th:href="@{/register}">Register</a>
+        </span>
+        <span th:if="${session.user != null}">
+            <a th:href="@{/logout}">Logout</a>
+        </span>
+    </nav>
+</header>
+
+<section class="cart-grid">
+
+    <!-- If cart is empty for all users -->
+    <div th:if="${orderItems.size() == 0}" style="text-align:center; padding:50px;">
+        <h2>Your cart is empty</h2>
+        <a class="lux-btn" th:href="@{/products}">Shop Now</a>
+    </div>
+
+    <!-- Cart items visible only for logged-in users who added products -->
+    <div class="cart-card" th:each="item : ${orderItems}" th:if="${session.user != null}">
+        <img th:src="@{/Images/{img}(img=${item.product.image})}" alt="Product Image">
+
+        <div class="cart-info">
+            <h3 th:text="${item.product.name}"></h3>
+            <p>Qty: <span th:text="${item.quantity}"></span></p>
+            <p class="price">₹ <span th:text="${item.totalPrice}"></span></p>
+
+            <form th:action="@{/order/remove}" method="post">
+                <input type="hidden" name="orderId" th:value="${item.id}">
+                <button type="submit" class="remove-btn">Remove</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Total price section -->
+    <div class="cart-total" th:if="${orderItems.size() > 0}">
+        <h2>Total: ₹ <span th:text="${totalPrice}"></span></h2>
+        <a class="checkout-btn lux-btn" th:href="@{/order/checkout}">Checkout</a>
+    </div>
+
+</section>
+
+<footer class="lux-footer">
+    © 2025 Bloom Essence - Spring & Autumn Collection
+</footer>
+</body>
+</html>

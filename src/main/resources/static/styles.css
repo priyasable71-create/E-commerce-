@@ -1,0 +1,244 @@
+/* ===============================
+   General Reset & Fonts
+   =============================== */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #fff8f0;
+    color: #4b3a2a;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===============================
+   Header & Navigation
+   =============================== */
+.lux-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(135deg, #f4c195, #d9915b);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.lux-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.lux-nav a {
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.lux-nav a:hover {
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* ===============================
+   Hero / Section Titles
+   =============================== */
+.hero-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #8b5e3c;
+    margin-bottom: 30px;
+}
+
+/* ===============================
+   Product Grid
+   =============================== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    padding: 40px 50px;
+}
+
+.product-card {
+    background: #fffaf0;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #8b5e3c;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #d9915b;
+    margin-bottom: 15px;
+}
+
+.lux-btn {
+    background: linear-gradient(135deg, #d9915b, #f4c195);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lux-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   Cart Page
+   =============================== */
+.cart-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 40px 50px;
+}
+
+.cart-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fffaf0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cart-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.cart-card img {
+    width: 120px;
+    border-radius: 10px;
+}
+
+.cart-info h3 {
+    margin-bottom: 10px;
+    color: #8b5e3c;
+}
+
+.cart-info .price {
+    font-weight: bold;
+    color: #d9915b;
+    margin-bottom: 10px;
+}
+
+.cart-info input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.remove-btn, .checkout-btn {
+    background: linear-gradient(135deg, #d9915b, #f4c195);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.remove-btn:hover, .checkout-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* ===============================
+   Forms (Login/Register)
+   =============================== */
+.form-section {
+    max-width: 450px;
+    margin: 60px auto;
+    background: #fffaf0;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.lux-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #8b5e3c;
+}
+
+.lux-form input[type="text"],
+.lux-form input[type="email"],
+.lux-form input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.lux-form .lux-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #d9915b, #f4c195);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lux-form .lux-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   Footer
+   =============================== */
+.lux-footer {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(135deg, #f4c195, #d9915b);
+    color: white;
+    font-weight: bold;
+    margin-top: 40px;
+}
